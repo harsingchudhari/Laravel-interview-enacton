@@ -60,8 +60,8 @@ public function edit($id)
     try {
         $prizeedata = Prizee::findOrFail($id);
         $existingTotal = Prizee::sum('probability');
-        $remaining = 100 - $existingTotal + $prizeedata->probability;
-
+        $remaining = 100 - $existingTotal; 
+      
         return view('prizee.update', compact('prizeedata', 'existingTotal', 'remaining'));
     } catch (\Exception $e) {
         return redirect()->route('prizee.index')->with('error', 'Prize not found.');
@@ -102,7 +102,7 @@ public function update(Request $request, $id)
         $Prizee->probability = $request->probability;
         $Prizee->save();
 
-        return redirect()->route('prizee.view')->with('success', 'Prize updated successfully!');
+        return redirect()->route('prizee.index')->with('success', 'Prize updated successfully!');
     } catch (\Exception $e) {
         return back()->withErrors(['error' => 'Error updating prize. Please try again.']);
     }

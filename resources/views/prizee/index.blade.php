@@ -33,16 +33,24 @@
             <div class="col-md-8">
                 <div class="card mt-3">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4>Prize Management</h4>
+                        <h4>Prize Distribution Management</h4>
 
                         <a href="{{ route('prizee.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus-circle"></i> Add New Prize
                         </a>
                     </div>
 
-                    <div class="alert alert-info mt-2">
-                        <strong>Total Percentage Used:</strong>{{ isset($existingTotal) ? $existingTotal : '' }}% 
-                        <strong>Remaining Percentage:</strong> {{ isset($remaining) ? $remaining : '' }}%
+                    @if (session('success'))
+                    <div id="success-alert" 
+                                class="alert alert-success m-2" 
+                                style="padding:10px; margin-bottom:10px; border-radius:5px;">
+                                {{ session('success') }}
+                            </div>
+                     @endif
+
+                    <div class="alert alert-info m-2">
+                        <strong>Total probability Used:</strong>{{ isset($existingTotal) ? $existingTotal : '' }}% 
+                        <strong>Remaining probability:</strong> {{ isset($remaining) ? $remaining : '' }}%
                     </div>
 
                     <table class="table" id="prizesTable">
@@ -134,6 +142,13 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
    
+   setTimeout(function() {
+            var alert = document.getElementById('success-alert');
+            if (alert) {
+                alert.style.display = 'none';
+            }
+        }, 5000);
+
      document.addEventListener("DOMContentLoaded", function () {
          
     
