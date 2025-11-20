@@ -17,7 +17,7 @@
                             <i class="fas fa-arrow-left"></i> Back
                         </a>
                     </div>
-                     <div class="alert alert-info mt-2">
+                     <div class="alert alert-info m-2">
                         
 
                             <strong>Total probability Used:</strong> {{ isset($existingTotal) ? $existingTotal : '' }}% <strong>Remaining probability:</strong> {{ isset($remaining) ? $remaining : ''}}%

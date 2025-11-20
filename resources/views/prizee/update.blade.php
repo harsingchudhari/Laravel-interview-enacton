@@ -27,18 +27,16 @@
                     </a>
                 </div>
 
-                <!-- Info Summary -->
                 <div class="alert alert-info m-3 d-flex justify-content-between align-items-center">
                     <div>
-                        <strong>Total Percentage Used:</strong> <span id="existingTotal">{{ isset($existingTotal) ? $existingTotal : ''}}</span>%  
+                        <strong>Total probability Used:</strong> <span id="existingTotal">{{ isset($existingTotal) ? $existingTotal : ''}}</span>%  
                         &nbsp;&nbsp;
-                        <strong>Remaining:</strong> <span id="remaining">{{ isset($remaining) ? $remaining : '' }}</span>%
+                        <strong>Remaining probability:</strong> <span id="remaining">{{ isset($remaining) ? $remaining : '' }}</span>%
                     </div>
                 </div>
 
                 <div class="card-body">
 
-                    <!-- Laravel Session Messages -->
                     @if (session('success'))
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
@@ -49,7 +47,6 @@
                         <div class="alert alert-info">{{ session('info') }}</div>
                     @endif
 
-                    <!-- Validation Errors -->
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul class="mb-0">
