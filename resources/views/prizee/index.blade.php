@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
@@ -30,7 +29,6 @@
 <body>
     <div class="container mt-4">
 
-        <!-- TABLE SECTION -->
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card mt-3">
@@ -61,15 +59,15 @@
                             @foreach($prizeedata as $index => $prizee)
                                 <tr data-prizee-id="{{ $prizee->id }}">
                                     <th scope="row">{{ $index + 1 }}</th>
-                                    <td>{{ $prizee->name }}</td>
-                                    <td>{{ $prizee->percentage }}%</td>
+                                    <td>{{ $prizee->title }}</td>
+                                    <td>{{ $prizee->probability }}%</td>
                                     <td>
-                                        <a href="{{ route('prizees.edit', $prizee->id) }}"
+                                        <a href="{{ route('prizee.edit', $prizee->id) }}"
                                            class="btn btn-warning btn-sm text-white">
                                            <i class="fas fa-edit"></i> Edit
                                         </a>
 
-                                        <form action="{{ route('prizees.delete', $prizee->id) }}"
+                                        <form action="{{ route('prizee.delete', $prizee->id) }}"
                                               method="POST" style="display:inline-block;">
                                             @csrf
                                             @method('DELETE')
@@ -88,7 +86,6 @@
             </div>
         </div>
 
-      <!-- Prize Input -->
             <div class="sumliutor mt-3 d-flex justify-content-center border alert">
                 <div class="text-center">
                    <h4>Simulation Calculation</h4>
@@ -105,7 +102,6 @@
                      <i class="fas fa-redo"></i> Reset
                  </button>
                     
-                    <!-- Statistics panel -->
                     <div id="simulationStats" class="mt-3 p-3 bg-light border rounded d-none">
                         <h5>Simulation Statistics</h5>
                         <p id="statsContent" class="mb-0"></p>
@@ -133,7 +129,6 @@
 
     </div>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -329,7 +324,6 @@
 
     }
 });
-
 
     </script>
 

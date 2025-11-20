@@ -40,7 +40,7 @@
                                 <label for="title" class="form-label"><i class="fas fa-user-tag"></i> Title</label>
                                 <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" required>
                                 @error('title')
-                                    <div class="text-danger mt-1"><i class="fas fa-exclamation-triangle"></i> {{ isset($message) ? $message : '' }} div>
+                                    <div class="text-danger mt-1"><i class="fas fa-exclamation-triangle"></i> {{ isset($message) ? $message : '' }} <div>
                                 @enderror
                             </div>
                             <div class="mb-3">
