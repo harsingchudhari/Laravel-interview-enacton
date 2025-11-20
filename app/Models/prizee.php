@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class prizee extends Model
+class Prizee extends Model
 {
-    //
+ 
 protected $table = 'prizee';
-protected $fillable = ['title', 'probibliy'];
+protected $fillable = ['title', 'probability'];
 
 }
